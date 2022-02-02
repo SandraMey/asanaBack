@@ -15,11 +15,27 @@ const createYoga = ({
   text1,
   subtitle2,
   text2,
-}, picture) => connection.promise().query(`INSERT INTO ${TABLE} (title, intro, subtitle1, text1, subtitle2, text2, picture) VALUES ( ?, ?, ?, ?, ?, ?, ?)`, [title, intro, subtitle1, text1, subtitle2, text2, picture]);
+  id_tag,
+}, picture) => connection.promise().query(`INSERT INTO ${TABLE} (title, intro, subtitle1, text1, subtitle2, text2, id_tag,picture) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )`, [title, intro, subtitle1, text1, subtitle2, text2, id_tag, picture]);
+
+const findOneByTitle = (title) => connection.promise().query('SELECT * FROM ${TABLE} WHERE title = ?', [title]);
+
+const updateAYoga = (data, picture, id) => {
+  if (picture) {
+    dataBase.query('UPDATE articles SET ?, image = ? WHERE id = ?', [data, picture.path, id]);
+  } else {
+    dataBase.query('UPDATE articles SET ? WHERE id = ?', [data, id]);
+  }
+};
+
+const findOneByTag = (tagId) => connection.promise().query(`SELECT * FROM ${TABLE} WHERE id_tag = ?`, [tagId]);
 
 module.exports = {
   findAllYoga,
   findOneById,
   deleteYoga,
-  createYoga
+  createYoga,
+  findOneByTitle,
+  updateAYoga,
+  findOneByTag,
 };
