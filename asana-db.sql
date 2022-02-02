@@ -21,5 +21,5 @@ CREATE TABLE `yogaType` (
 
 INSERT INTO `tag` (`title`) VALUES ('Dynamique'), ('Doux'), ('Méditation');
 
-INSERT INTO `yogaType` (`title`, `intro`, `subtitle1`, `text1`, `subtitle2`, `text2`, `picture`) VALUES (`title`, `intro`, `subtitle1`, `text1`, `subtitle2`, `text2`, `picture`);
+INSERT INTO `yogaType` (`title`, `intro`, `subtitle1`, `text1`, `subtitle2`, `text2`, `picture`, `id_tag`) VALUES ('ashtanga', 'blabla', 'bli', 'blou', 'ble', 'bla', 'bli', 1);
 

@@ -1,6 +1,6 @@
 const connection = require('../connexion');
 
-const TABLE = 'yoga';
+const TABLE = 'yogaType';
 
 const findAllYoga = () => connection.promise().query(`SELECT * FROM ${TABLE}`);
 
