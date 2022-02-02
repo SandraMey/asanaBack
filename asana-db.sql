@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS `tag`;
+DROP TABLE IF EXISTS `yogaType`;
+
+CREATE TABLE `tag` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `title` VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE `yogaType` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `title` VARCHAR(255) NOT NULL,
+    `intro` VARCHAR(255) NOT NULL,
+    `subtitle1` VARCHAR(255) NOT NULL,
+    `text1` VARCHAR(255) NOT NULL,
+    `subtitle2` VARCHAR(255) NOT NULL,
+    `text2` VARCHAR(255) NOT NULL,
+    `picture` VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id_tag) REFERENCES tag(id) 
+);
