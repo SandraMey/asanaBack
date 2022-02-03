@@ -15,4 +15,10 @@ tagRouter.get('/:id/yoga', async (req, res) => {
   res.json(yoga);
 });
 
+tagRouter.put('/:id', async (req, res) => {
+  await tagModel.updateTag(req.body, req.params.id);
+  res.status(204).json();
+});
+
+
 module.exports = tagRouter;

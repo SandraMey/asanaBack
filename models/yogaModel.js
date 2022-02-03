@@ -20,14 +20,6 @@ const createYoga = ({
 
 const findOneByTitle = (title) => connection.promise().query('SELECT * FROM ${TABLE} WHERE title = ?', [title]);
 
-const updateAYoga = (data, picture, id) => {
-  if (picture) {
-    dataBase.query('UPDATE articles SET ?, image = ? WHERE id = ?', [data, picture.path, id]);
-  } else {
-    dataBase.query('UPDATE articles SET ? WHERE id = ?', [data, id]);
-  }
-};
-
 const findOneByTag = (tagId) => connection.promise().query(`SELECT * FROM ${TABLE} WHERE id_tag = ?`, [tagId]);
 
 module.exports = {
@@ -36,6 +28,5 @@ module.exports = {
   deleteYoga,
   createYoga,
   findOneByTitle,
-  updateAYoga,
   findOneByTag,
 };
