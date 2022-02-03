@@ -58,7 +58,4 @@ yogaRouter.post('/', upload.single('picture'), async (req, res) => {
   });
 });
 
-
-
-
 module.exports = yogaRouter;

@@ -7,7 +7,7 @@ const yogaRouter = require('./router/yogaRouter');
 const app = express();
 
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: '*',
   credentials: true,
 };
 
